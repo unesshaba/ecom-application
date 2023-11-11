@@ -17,14 +17,11 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Bill {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date billDate;
     private Long customerId;
-
     @OneToMany(mappedBy = "bill")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<ProductItem> productItems;
     @Transient
     private Customer customer;

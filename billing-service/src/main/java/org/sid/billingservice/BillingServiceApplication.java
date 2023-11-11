@@ -47,7 +47,6 @@ public class BillingServiceApplication {
 				productItem.setPrice(product.getPrice());
 				productItem.setDiscount(Math.random());
 				productItemRepository.save(productItem);
-				System.out.println(productItem);
 			});
 
 		};

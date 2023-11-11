@@ -20,7 +20,7 @@ public class BillRestController {
     private CustomerRestClient customerRestClient;
     @Autowired
     private ProductRestClient productRestClient;
-    @GetMapping("/fullBill/{id}")
+    @GetMapping("/fullbill/{id}")
     public Bill bill(@PathVariable Long id){
         Bill bill=billRepository.findById(id).get();
         bill.setCustomer(customerRestClient.findCustomerById(bill.getCustomerId()));
